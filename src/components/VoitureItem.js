@@ -8,9 +8,9 @@ function VoitureItem(props) {
     )
 }
 const mapStateToProps = (state) =>{
-    console.log("ssss",state.voiture)
+    console.log("ssss",state)
     return{
-        dataVoiture: JSON.stringify(state.voiture)
+        dataVoiture: JSON.stringify(state?.voitures)
     }
 }
 export default connect(mapStateToProps)(VoitureItem)

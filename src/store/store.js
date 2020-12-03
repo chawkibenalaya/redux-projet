@@ -1,12 +1,7 @@
-import {createStore} from "redux"
-import reducer from '../Reducers/reducer'
- const initialState = {
-     voiture: {
-         id:'1',
-         name:'test',
-         puissance:'5',
-         description:'test test'
-     }
- }
- const store = createStore(reducer, initialState)
- export default store;
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
+
+import reducer from "../Reducers/reducer";
+
+const store = createStore(reducer, applyMiddleware(logger));
+export default store;
